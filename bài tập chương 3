@@ -1,10 +1,9 @@
-#include<iostream>
-#include<string> 
-using namespace std;
-
+#include<iostream.h>
+#include<stdio.h>
+#include<conio.h>
  class hoadon{
  	float kl,dg,thanhtien,mavt; 
-	string  tenvt,phieu,ngaylap;
+	char tenvt,phieu,ngaylap;
 	public :
 	 void nhap();
 	 void inhoadon();
@@ -12,10 +11,10 @@ using namespace std;
  }; 
   void hoadon::nhap() {
   	cout << endl << endl ; 
-    cout << "moi ban nhap ten vat tu:" ;getline(cin,tenvt); cin.ignore(1);
-  	cout << "nmoi ban nhap gay lap: " ;getline(cin,ngaylap);cin.ignore(1);
-  	cout << "moi ban nhap loai phieu :" ;getline( cin,phieu);
-   cin.ignore(3);
+    cout << "moi ban nhap ten vat tu:" ;gets(tenvt); fflush(stdin);
+  	cout << "nmoi ban nhap gay lap: " ;gets(ngaylap);fflush(stdin);
+  	cout << "moi ban nhap loai phieu :" ;gets( phieu);fflush(stdin);
+   
    	cout << "moi ban nhap ma vat tu:"; cin >> mavt;
   	cout << "moi ban nhap khoi luong :" ;cin >>kl;
   	cout <<"moi ban nhap don gia :"  ;cin >> dg;
@@ -23,7 +22,7 @@ using namespace std;
   
   void hoadon::inhoadon(){
    thanhtien=dg*kl;
-   
+   cout << "thanh tien = " << thanhtien;
    
 }
  
