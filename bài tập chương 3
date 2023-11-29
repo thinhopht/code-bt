@@ -3,14 +3,14 @@
 #include<conio.h>
  class hoadon{
  	float kl,dg,thanhtien,mavt; 
-	char tenvt,phieu,ngaylap;
+	char tenvt[20],phieu[10],ngaylap[12];
 	public :
 	 void nhap();
 	 void inhoadon();
  
  }; 
   void hoadon::nhap() {
-  	cout << endl << endl ; 
+  	cout << endl ; 
     cout << "moi ban nhap ten vat tu:" ;gets(tenvt); fflush(stdin);
   	cout << "nmoi ban nhap gay lap: " ;gets(ngaylap);fflush(stdin);
   	cout << "moi ban nhap loai phieu :" ;gets( phieu);fflush(stdin);
@@ -18,6 +18,7 @@
    	cout << "moi ban nhap ma vat tu:"; cin >> mavt;
   	cout << "moi ban nhap khoi luong :" ;cin >>kl;
   	cout <<"moi ban nhap don gia :"  ;cin >> dg;
+	cout << endl;
 }
   
   void hoadon::inhoadon(){
@@ -36,6 +37,7 @@
     	hoadon i;   i.nhap();
 		  i.inhoadon() ;
 	} 
+ 
 	for (i=0;i<n;i++){
 		for(j=i+1;j<n;j++){
 			if(i.inhoadon() < j.inhoadon() ) {
