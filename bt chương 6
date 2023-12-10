@@ -1,0 +1,89 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class nguoi{
+   protected:
+      string name;
+    public:
+       virtual void nhap()=0;
+	  //	cout << "moi ban nhap ho va ten "; getline(cin,name);
+		//  cin.ignore(1); 
+	  
+       virtual void in()=0;
+	   virtual void khen()=0;	  	  
+}; 
+
+class sinhvien: public nguoi{
+	protected:
+     float dtb;
+	public :
+	void nhap(){
+		cout << "nhap ten sinh vien :";getline(cin,name);
+		cin.ignore(1);  
+		cout << "moi ban nhap diem trung binh ="<< " ";cin >> dtb;
+		 
+	} 
+	void in(){
+		cout <<" ten cua sinh vien la "<< name << endl;
+		cout <<  "diem cua sinh vien la "<< dtb << endl ; 
+	} 
+	void khen(){
+	   if(dtb>9){
+	   	cout << " ban that gioi, chuc mung ban nhe" ;
+	   } 
+	   else {
+	   	cout << "ban that ngu, chuc mung"; 
+	   } 
+	} 
+}; 
+    class giangvien:public nguoi {
+	
+	protected: 
+	int sobaibao;
+	public :
+	void nhap(){
+		cout << "moi ban nhap ten giang vien :";getline(cin,name);
+		cin.ignore(1);  
+		cout << "moi ban nhap so bai bao la:";cin >> sobaibao; 
+     }
+	
+	void in(){
+		cout << "ten cua giang vien la: "<< name << endl;
+		cout << "so bai bao cua giang vien la: "<< sobaibao << endl; 
+	} 
+	
+	void khen(){
+	  if(sobaibao>5){
+	  	cout << "that tuyet voi, giang vien qua gioi" ; 
+	  	
+	  }	
+	} 
+}; 
+
+
+int main (){
+   int n,m,b; cout << "so nguoi ban muon nhap vao =" ;
+   int a[100]; cin >> n ;
+   cout << "so giang vien ban muon nhap trong  " << n << " "<< "nguoi la: "; cin >> m; 
+
+      for (int i=0;i<m;i++){
+      	cin.ignore(1); 
+         	giangvien ai,*p;
+	     	p=&ai; p->nhap();
+		      p->in() ;
+			  p->khen(); 
+			  cout << endl ; 
+	}  
+  cout << "vay con lai la sinh vien, moi ban nhap so sinh vien con lai" << endl ;
+      b=n-m;
+	  for (int i=0;i<b;i++){
+	  		cin.ignore(1); 
+         	sinhvien ai,*p;
+	     	p=&ai; p->nhap();
+		      p->in() ;
+			  p->khen(); 
+			  cout << endl ;
+	  } 
+	return 0;	   
+}
