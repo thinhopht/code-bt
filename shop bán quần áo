@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán Quần Áo Cao Cấp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .product-layout {
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-image {
+            width: 45%;
+        }
+        .product-info {
+            width: 50%;
+        }
+        .product-name {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .price {
+            color: red;
+            font-size: 24px;
+        }
+        .discount {
+            text-decoration: line-through;
+            color: grey;
+            margin-left: 10px;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: orange;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .button-buy {
+            background-color: red;
+        }
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            margin: 0 5px;
+        }
+        .shipping {
+            margin-top: 20px;
+        }
+        .shipping-logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .shipping-link {
+            color: red;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .shipping-link:hover {
+            text-decoration: underline;
+        }
+        .shipping-description {
+            margin-top: 5px;
+            color: grey;
+            font-size: 12px;
+        }
+        .general-info {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+        .general-info p {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;
+            padding: 5px 0;
+        }
+        .quantity-buttons {
+            display: inline-flex;
+            align-items: center;
+        }
+        .quantity-buttons button {
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+        }
+        .color-preview {
+            display: flex;
+            margin-top: 5px;
+        }
+        .color-preview img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Thanh điều hướng -->
+    <div class="breadcrumb">
+        <a href="http://www.humg.edu.vn">Trang chủ</a> > <a href="http://www.humg.edu.vn">Quần áo</a> > <a href="http://www.humg.edu.vn">Quần áo nam</a>
+    </div>
+
+    <!-- Bố cục sản phẩm -->
+    <div class="product-layout">
+        <!-- Hình ảnh sản phẩm bên trái -->
+        <img src="https://vanus.vn/uploads/images/san-pham/quan-au-nam-xanh-duong.jpg" alt="Main Product" class="main-image" id="mainImage">
+
+        <!-- Thông tin sản phẩm bên phải -->
+        <div class="product-info">
+            <!-- Tên sản phẩm -->
+            <h2 class="product-name">(Giá độc quyền) Quần âu nam cạp 3 lớp 360Boutique quần tây dài Hàn Quốc form slimcrop vải dày chống nhăn-QACOL420</h2>
+
+            <!-- Tên sản phẩm và giá -->
+            <p class="price">₫89.000 <span class="discount">₫140.000</span> <img src="https://via.placeholder.com/20" alt="Xe Giao Hàng" class="shipping-logo"></p>
+            <p><strong>Miễn phí vận chuyển</strong></p>
+
+            <div class="options">
+                <label for="color">Màu sắc: </label>
+                <select id="color" onchange="updateColorPreview()">
+                    <option value="blue" data-image="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ls6ioj5fiie116.webp">Xanh than</option>
+                    <option value="black" data-image="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llu5k4pp5nfj57.webp">Đen</option>
+                    <option value="grey" data-image="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llu4a0nqk9gf64.webp">Ghi sáng</option>
+                </select>
+                <div class="color-preview" id="colorPreview">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ls6ioj5fiie116.webp" alt="Color Preview" id="previewImage">
+                </div>
+            </div>
+            
+            <script>
+                function updateColorPreview() {
+                    const colorSelect = document.getElementById('color');
+                    const selectedOption = colorSelect.options[colorSelect.selectedIndex];
+                    const colorPreview = document.getElementById('previewImage');
+                    colorPreview.src = selectedOption.dataset.image; // Cập nhật ảnh mô tả màu
+                }
+            </script>
+            <!-- Chọn size -->
+            <div class="options">
+                <label for="size">Kích cỡ: </label>
+                <select id="size">
+                    <option value="28">28</option>
+                    <option value="29" selected>29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                </select>
+            </div>
+
+            <!-- Chọn số lượng với nút cộng trừ -->
+            <div class="options">
+                <label for="quantity">Số lượng: </label>
+                <div class="quantity-buttons">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" class="quantity-input" value="1" min="1">
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+            </div>
+
+            <!-- Chọn địa chỉ giao hàng -->
+            <div class="shipping">
+                <img src="https://via.placeholder.com/20" alt="Shipping Logo" class="shipping-logo">
+                <a href="http://www.humg.edu.vn" class="shipping-link">Chọn địa chỉ giao hàng</a>
+                <p class="shipping-description">để dự báo thời gian giao hàng đúng và vận chuyển chính xác nhất</p>
+            </div>
+
+            <!-- Thêm vào giỏ hàng / Mua ngay -->
+            <div class="options">
+                <button class="button" onclick="addToCart()">Thêm vào giỏ hàng</button>
+                <button class="button button-buy" onclick="buyNow()">Mua ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thông tin chung -->
+    <div class="general-info">
+        <h3>Thông tin chung</h3>
+        <p><strong>SKU:</strong> <span>12345ABC</span></p>
+        <p><strong>Thương hiệu:</strong> <span>Thời Trang Cao Cấp</span></p>
+        <p><strong>Xuất xứ:</strong> <span>Việt Nam</span></p>
+    </div>
+</div>
+
+<script>
+    function addToCart() {
+        alert('Sản phẩm đã được thêm vào giỏ hàng!');
+    }
+
+    function buyNow() {
+        alert('Bạn đã mua ngay sản phẩm!');
+    }
+
+    function changeQuantity(amount) {
+        const quantityInput = document.getElementById('quantity');
+        let currentQuantity = parseInt(quantityInput.value);
+        currentQuantity += amount;
+        if (currentQuantity < 1) currentQuantity = 1; // Giới hạn số lượng không dưới 1
+        quantityInput.value = currentQuantity;
+    }
+
+    function updateColorPreview() {
+        const colorSelect = document.getElementById('color');
+        const selectedOption = colorSelect.options[colorSelect.selectedIndex];
+        const colorPreview = document.getElementById('colorPreview');
+        colorPreview.innerHTML = `<img src="${selectedOption.dataset.image}" alt="Color Preview">`;
+    }
+</script>
+
+</body>
+</html>
